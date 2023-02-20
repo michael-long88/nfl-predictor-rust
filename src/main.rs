@@ -238,17 +238,17 @@ fn main() {
 
     // println!("{:?}", RandomForestClassifierParameters::default())
 
-    // let best_params = grid_search(&x_train, &y_train).unwrap();
+    let best_params = grid_search(&x_train, &y_train).unwrap();
     // Number of trees: 25
     // Max depth: 8
     // Max features: 6
     // 78.18% mean accuracy (average accuracy across each fold)
 
-    let best_params = BestParameters {
-        n_trees: 25,
-        max_depth: 8,
-        max_features: 6
-    };
+    // let best_params = BestParameters {
+    //     n_trees: 25,
+    //     max_depth: 8,
+    //     max_features: 6
+    // };
 
     let tuned_classifier = RandomForestClassifier::fit(&x_train, &y_train, RandomForestClassifierParameters::default()
         .with_n_trees(best_params.n_trees)
