@@ -114,7 +114,7 @@ fn grid_search(x_train: &DenseMatrix<f64>, y_train: &Vec<u32>) -> Option<BestPar
     let mtry = (num_features as f64).sqrt().floor() as usize;
 
     let n_trees = vec![25, 50, 75, 100];
-    let max_depth = vec![6, 8, 10, 12, 14, 50];
+    let max_depth = vec![6, 8, 10];
     let max_features = vec![(mtry / 2) as usize, mtry, (mtry * 2) as usize];
 
     for n_tree in n_trees {
