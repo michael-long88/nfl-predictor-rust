@@ -1,0 +1,18 @@
+team_name,week,day,date,result,opponent,tm_score,opp_score,1stD_offense,TotYd_offense,PassY_offense,RushY_offense,TO_offense,1stD_defense,TotYd_defense,PassY_defense,RushY_defense,TO_defense
+Carolina Panthers,1,Sun,September 11,0,Cleveland Browns,24,26,15,261,207,54,1,23,355,138,217,0
+Carolina Panthers,2,Sun,September 18,0,New York Giants,16,19,18,275,129,146,2,18,265,162,103,0
+Carolina Panthers,3,Sun,September 25,1,New Orleans Saints,22,14,12,293,148,145,0,19,426,342,84,3
+Carolina Panthers,4,Sun,October 2,0,Arizona Cardinals,16,26,11,220,180,40,3,20,338,206,132,1
+Carolina Panthers,5,Sun,October 9,0,San Francisco 49ers,15,37,15,308,244,64,1,22,397,244,153,1
+Carolina Panthers,6,Sun,October 16,0,Los Angeles Rams,10,24,8,203,110,93,1,22,360,249,111,1
+Carolina Panthers,7,Sun,October 23,1,Tampa Bay Buccaneers,21,3,14,343,170,173,0,17,322,276,46,0
+Carolina Panthers,8,Sun,October 30,0,Atlanta Falcons,34,37,23,478,309,169,1,21,406,239,167,2
+Carolina Panthers,9,Sun,November 6,0,Cincinnati Bengals,21,42,13,228,164,64,3,30,464,223,241,0
+Carolina Panthers,10,Thu,November 10,1,Atlanta Falcons,25,15,18,333,101,232,0,20,291,153,138,1
+Carolina Panthers,11,Sun,November 20,0,Baltimore Ravens,3,13,13,205,169,36,3,19,308,193,115,1
+Carolina Panthers,12,Sun,November 27,1,Denver Broncos,23,10,19,349,164,185,1,14,246,125,121,2
+Carolina Panthers,13,Sun,December 11,1,Seattle Seahawks,30,24,24,328,105,223,0,16,287,241,46,2
+Carolina Panthers,14,Sun,December 18,0,Pittsburgh Steelers,16,24,12,209,188,21,0,22,325,169,156,0
+Carolina Panthers,15,Sat,December 24,1,Detroit Lions,37,23,30,570,250,320,0,22,381,336,45,1
+Carolina Panthers,16,Sun,January 1,0,Tampa Bay Buccaneers,24,30,22,400,326,74,3,25,478,411,67,1
+,17,Sun,January 8,1,New Orleans Saints,10,7,14,203,32,171,2,16,304,161,143,1

@@ -238,17 +238,17 @@ fn main() {
 
     // println!("{:?}", RandomForestClassifierParameters::default())
 
-    let best_params = grid_search(&x_train, &y_train).unwrap();
+    // let best_params = grid_search(&x_train, &y_train).unwrap();
     // Number of trees: 25
     // Max depth: 8
     // Max features: 6
     // 78.18% mean accuracy (average accuracy across each fold)
 
-    // let best_params = BestParameters {
-    //     n_trees: 25,
-    //     max_depth: 8,
-    //     max_features: 6
-    // };
+    let best_params = BestParameters {
+        n_trees: 25,
+        max_depth: 8,
+        max_features: 6
+    };
 
     let tuned_classifier = RandomForestClassifier::fit(&x_train, &y_train, RandomForestClassifierParameters::default()
         .with_n_trees(best_params.n_trees)
@@ -259,7 +259,8 @@ fn main() {
     let accuracy_score = accuracy(&y_test, &tuned_classifier.predict(&x_test).unwrap());
 
     println!("------------Variable Importance------------");
-    for (name, importance) in variable_importance(&x_train, &y_train, best_params, features.unwrap().get_column_names(), &accuracy_score).iter() {
+    let variable_importance = variable_importance(&x_train, &y_train, best_params, features.unwrap().get_column_names(), &accuracy_score);
+    for (name, importance) in variable_importance.iter() {
         println!("{}: {:.2}%", name, importance);
     }
     println!("-------------------------------------------");
@@ -268,5 +269,26 @@ fn main() {
 
     println!("Accuracy of tuned model: {}", accuracy(&y_test, &y_hat));
     // 77.78% accuracy
+
+    let panthers_file = "data/season_2021.csv";
+    let mut panthers_df = read_csv(panthers_file).unwrap();
+    
+    
+    let (panthers_features, panthers_target) = feature_and_target(&mut panthers_df);
+    let panthers_x_matrix = convert_features_to_matrix(panthers_features.as_ref().unwrap()).unwrap();
+
+    // println!("{}", target.unwrap().head(Some(10)));
+
+    let panthers_target_array = panthers_target.unwrap().to_ndarray::<UInt32Type>().unwrap();
+
+    let mut panthers_y: Vec<u32> = Vec::new();
+    for val in panthers_target_array.iter(){
+        panthers_y.push(*val);
+    }
+
+    let panthers_y_hat = tuned_classifier.predict(&panthers_x_matrix).unwrap();
+
+    println!("Accuracy of predictions on Carolina Panthers 2022 data: {}", accuracy(&panthers_y, &panthers_y_hat));
+    // 89.47% accuracy
 
 }
